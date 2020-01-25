@@ -1,0 +1,49 @@
+CREATE TABLE Product(
+    id VARCHAR (20) NOT NULL,
+    nama VARCHAR (50) NOT NULL,
+    price VARCHAR(100) NOT NULL,
+    id_category VARCHAR (20) NOT NULL,
+    id_cashier VARCHAR (20) NOT NULL,
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE Category(
+    id VARCHAR (20) ,
+    name VARCHAR (50),
+    PRIMARY KEY (id)
+);
+
+
+CREATE TABLE Cashier(
+    identity VARCHAR (20) NOT NULL,
+    name VARCHAR (50) NOT NULL,
+    PRIMARY KEY (identity)
+);
+
+
+
+
+insert into Product (id, nama, price, id_category, id_cashier) 
+VALUES ("1", "Latte","10000", "2", "1");
+insert into Product (id, nama, price, id_category, id_cashier) 
+VALUES ("2", "Cake","20000", "1", "2");
+insert into Product (id, nama, price, id_category, id_cashier) 
+VALUES ("3", "AleAle","45000", "1", "3");
+
+insert into Category (id, name) 
+VALUES ("1", "Food");
+insert into Category (id, name) 
+VALUES ("2", "Drink");
+insert into Category (id, name) 
+VALUES ("3", "Drink");
+
+insert into Cashier (identity, name) 
+VALUES ("1", "Pevita Pearce");
+insert into Cashier (identity, name) 
+VALUES ("2", "Raisa Andriana");
+insert into Cashier (identity, name) 
+VALUES ("3", "Muhammad Nail Mumtaza");
+
+SELECT nama, price FROM Product INNER JOIN Cashier ON id_cashier=identity;
+
+
